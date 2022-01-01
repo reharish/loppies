@@ -8,7 +8,12 @@ do
 	then
 		if [[ -f $i ]]
 		then
-			cp $i $i.bak
+       if cp $i $i.bak
+		then
+			echo -e "\e[33m $i ==> $i.bak \e[0m"
+		fi
+		else
+			echo -e "\e[033m File Not found \e[0m"
 		fi
 	fi
 done
