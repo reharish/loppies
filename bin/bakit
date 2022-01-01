@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -ne 0 ]
+then
+for i in $*;
+do
+#	echo $0
+#	echo $i
+	if [ $0 != $i ]
+	then
+		if [[ -f $i ]]
+		then
+			cp $i $i.bak
+		fi
+	fi
+done
+fi
