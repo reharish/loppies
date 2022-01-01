@@ -8,5 +8,5 @@
   
 
 #### Backit  
-A Snippet to make `.bak` of everyfile parsed into it. If the file exists.  
+A snippet to make `.bak` of everyfile parsed into it. If the file exists.  
 
