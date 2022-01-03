@@ -1,0 +1,20 @@
+#!/bin/bash
+if [ $# -eq 0 ];
+then
+     echo -e "\e[031m Please Specify Docker container ID or name \e[0m"
+     exit 1
+else
+ for i in $@;
+ do
+     if [ $i != 'rm-docker' ];
+     then
+        if docker rm $i 2&> /dev/null;
+        then
+            echo -e "$i : \e[032m Stopped \e[0m";
+        else
+            echo -e "$i : \e[031m NOT A CONTAINER\e[0m";
+        fi
+     fi
+ done
+ exit 0
+fi
