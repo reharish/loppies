@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+is_on(){
+	if ping -c 1  $1 2>&1 /dev/null 
+	then
+			echo $1
+	fi
+}
+
+
+network=$1
+mask=$2
+
+#Need to implement  network
+
+for i in 
+do
+	is_on $i & disown
+done
+
