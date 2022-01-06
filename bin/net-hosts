@@ -12,10 +12,5 @@ is_on(){
 network=$1
 mask=$2
 
-#Need to implement  network
-
-for i in 
-do
-	is_on $i & disown
-done
+# Need to implement  network
 
