@@ -8,9 +8,3 @@ is_on(){
 	fi
 }
 
-
-network=$1
-mask=$2
-
-# Need to implement  network
-
