@@ -1,0 +1,8 @@
+
+# Dirsearch Or Gobuster 
+
+# Make dirsearch script with python
+
+
+import os
+import sys
