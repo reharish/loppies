@@ -2,11 +2,11 @@
 
 if rm *.save 2>/dev/null
 then
-    echo "\e[031m Removed *.save \e[0m"
+    echo -e "\e[031m Removed *.save \e[0m"
 fi
 if rm *~ 2>/dev/null
 then
-    echo "\e[031m Removed *~ \e[0m"
+    echo -e "\e[031m Removed *~ \e[0m"
 fi
 
 
