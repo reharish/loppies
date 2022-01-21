@@ -3,9 +3,8 @@
 ## Handy Snippets for BASH env
 
 - [backit](#Backit)  
-
-  
-  
+- [clean](#clean)
+- [#rm-docker](#rm-docker)
 
 #### Backit  
 A snippet to make `.bak` of everyfile parsed into it. If the file exists.   
