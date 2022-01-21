@@ -16,7 +16,7 @@ A snippet to make `.bak` of everyfile parsed into it. If the file exists.
 
 #### clean
 A script which clear all not needed temp files from both *swap* and *ram*
-* It Will drop caches from ram and remount swap partition to delete temp files
+* It will drop caches from ram and remount swap partition to delete temp files
 
 #### rm-docker
 The script can be used to remove the docker instances from system memory which id parsed into it.
