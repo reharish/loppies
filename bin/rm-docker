@@ -1,5 +1,5 @@
 #!/bin/bash
-<<<<<<< HEAD
+
 
 count=0
 
@@ -12,7 +12,7 @@ do
 		count=(($count+1))
 	fi
 done
-=======
+
 if [ $# -eq 0 ];
 then
      echo -e "\e[031m Please Specify Docker container ID or name \e[0m"
@@ -32,4 +32,4 @@ else
  done
  exit 0
 fi
->>>>>>> 7eeca9bdafd482cb20340a492f1a4efb45bc7019
+
