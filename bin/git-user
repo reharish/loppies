@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Change below
+MyUser=""
+MyEmail=""
+WorkUser=""
+WorkEmail=""
+
+if [ "$#" == "" ]
+then
+	echo -e "\e[032m1.Personal Repo \n2.Work Repo \e[031m"
+	read -p $'Enter [1/2]: \e[0m' REPO
+fi
+
+ERR(){
+
+	echo -e "\e[31mERR : Something Went Wrong\e[0m"
+}
+
+if [ "$REPO" == "1" ] || [ "$1" == "1" ]
+then
+
+	if git config user.name "$MyUser" &&\
+			git config user.email "$MyEmail";
+	then
+		echo -e "\e[33mSetting : "$MyUser" - "$MyEmail"\e[0m"
+	else
+		ERR
+		exit 2
+	fi
+	
+elif [ "$REPO" == "2" ] || [ "$1" == "2" ]
+then
+	if git config user.name "$WorkUser" &&\
+			git config user.email "$WorkEmai";
+	then
+		echo -e "\e[33mSetting : "$WorkUser" -"$WorkEmai"\e[0m"
+	else
+		ERR
+		exit 3
+	fi
+else
+	ERR
+	exit 1
+fi
