@@ -4,7 +4,9 @@
 
 - [backit](#Backit)  
 - [clean](#clean)
-- [#rm-docker](#rm-docker)
+- [rm-docker](#rm-docker)
+- [net-hosts](#net-hosts)
+- [html-open](#html-open)
 
 #### Backit  
 A snippet to make `.bak` of everyfile parsed into it. If the file exists.   
@@ -22,3 +24,8 @@ The script can be used to remove the docker instances from system memory which i
 
 #### net-hosts
 The script will display all hosts inside the network with ip address like arp table.
+
+#### HTML-OPEN
+It will open html index file on the web browser if it presents.
+	* need to specify PATH or file as an argument.
+	* firefox and chrome is supported for opening in private.

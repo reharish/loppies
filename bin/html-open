@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ "$#" == "1" ]
+then
+	if test -d $1;
+	then
+		echo "Its a Dir"
+		if ls *html > /dev/null 2>&1;
+		then
+		   echo "HTML File exist"
+		else
+			echo "No HTML files"
+		fi
+		
+	elif test -f $1;
+	then
+		echo "its a File"
+		echo "opening in browser"
+	fi
+	
+fi
+
+	
