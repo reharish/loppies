@@ -5,17 +5,32 @@ then
 	if test -d $1;
 	then
 		echo "Its a Dir"
-		if ls *html > /dev/null 2>&1;
+		if ls *.html > /dev/null 2>&1;
 		then
-		   echo "HTML File exist"
+		    echo "HTML File exist"
+		    for html in $(ls *.html);
+		    do
+			read -p "Open $html ? [y/n] " user
+			if [ "$user" == "y" ] || [ "$user" == "Y" ]
+			then
+			    firefox --private-window $html >/dev/null 2>&1
+			    sleep 2
+			    exit 0
+			fi
+		    done
 		else
 			echo "No HTML files"
 		fi
 		
 	elif test -f $1;
 	then
-		echo "its a File"
-		echo "opening in browser"
+	    echo "its a File"
+	    echo "opening in browser"
+	    firefox --private-window $html >/dev/null 2>&1
+	    sleep 2
+	    exit 0
+
+		
 	fi
 	
 fi
