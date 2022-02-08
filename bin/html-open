@@ -4,7 +4,6 @@ if [ "$#" == "1" ]
 then
 	if test -d $1;
 	then
-		echo "Its a Dir"
 		if ls *.html > /dev/null 2>&1;
 		then
 		    echo "HTML File exist"
@@ -13,9 +12,17 @@ then
 			read -p "Open $html ? [y/n] " user
 			if [ "$user" == "y" ] || [ "$user" == "Y" ]
 			then
-			    firefox --private-window $html >/dev/null 2>&1
-			    sleep 2
-			    exit 0
+			    if firefox --private-window $html >/dev/null 2>&1
+				then
+					echo "Opening in  FireFox"
+					sleep 2
+					exit 0
+				elif google-chrome --incognito $html >dev/null 2>&1
+				then
+					echo "Opening in Chrome"
+					sleep 2
+					exit 0
+				fi
 			fi
 		    done
 		else
@@ -24,15 +31,19 @@ then
 		
 	elif test -f $1;
 	then
-	    echo "its a File"
 	    echo "opening in browser"
-	    firefox --private-window $html >/dev/null 2>&1
-	    sleep 2
-	    exit 0
-
-		
+	    if firefox --private-window $html >/dev/null 2>&1
+		then
+			echo "opening in Firefox"
+			sleep 2
+			exit 0
+		elif google-chrome --incognito $html >/dev/null 2>&1
+		then
+			echo "opening in Chrome"
+	 		sleep 2
+			exit 0
+		fi
 	fi
-	
 fi
 
 	
