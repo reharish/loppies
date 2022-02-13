@@ -1,10 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env python3
+
+import socket
+import os
+import subprocess
+
+"""
+Script : Net-Host
+Description : Finding available host belong to your local network like net-discover
+"""
+def get_local_ip():
+   return socket.gethostbyname(socket.gethostname())
+ 
 
 
-is_on(){
-	if ping -c 1  $1 2>&1 /dev/null 
-	then
-			echo $1
-	fi
-}
-
+if __name__ == "__main__":
+    print(get_local_ip())
