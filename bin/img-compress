@@ -28,7 +28,7 @@ Takes name and qulaity as an args
 def img_compress(img_name, img_quality):
     picture = Image.open(img_name)
     img_name = img_path_rm(img_name)
-    # Changing ALL formats to RGBA
+    # Changing ALL formats to RGB
     rgb_picture = picture.convert('RGB')
     rgb_picture.save("small_"+img_name,"JPEG",
                         optimize=True, quality=img_quality)
