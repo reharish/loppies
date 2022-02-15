@@ -29,7 +29,7 @@ if __name__ == "__main__" :
         
     try:
         img_compress(img_name, img_quality)
-        print(img_name+" ==> small_"+img_name)
+        print("\33[5m\33[32m"+img_name+" ==> small_"+img_name+"\33[0m")
         exit(0)
     except FileNotFoundError as e:
         print("No such File " + img_name)
