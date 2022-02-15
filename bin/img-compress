@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+from PIL import Image
+import argparse
+import os
+
+parser=argparse.ArgumentParser(description='WebProber V1.0')
+parser.add_argument('-f','--filename',type=str,required=True,help="Specify filename.")
+parser.add_argument('-q','--quality',type=int, default=10, nargs='?',help="Specify quality in scale 100 (default = 10)")
+
+args = parser.parse_args()
+
+def img_path_rm(img_name):
+    img_name = os.path.basename(img_name)
+    print(img_name)
+    return img_name
+
+def img_compress(img_name, img_quality):
+    picture = Image.open(img_name)
+    img_name = img_path_rm(img_name)
+    # Changing ALL formats to RGBA
+    rgb_picture = picture.convert('RGB')
+    rgb_picture.save("small_"+img_name,"JPEG",
+                 optimize=True, quality=img_quality)
+
+
+if __name__ == "__main__" :
+
+    img_name = args.filename
+    img_quality = args.quality
+        
+    try:
+        img_compress(img_name, img_quality)
+        exit(0)
+    except Exception as e:
+        print("Something went wrong !! " + e)
+        exit(1)
