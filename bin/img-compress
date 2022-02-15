@@ -4,16 +4,27 @@ from PIL import Image
 import argparse
 import os
 
-parser=argparse.ArgumentParser(description='WebProber V1.0')
+"""
+ArgParse initiation makes image name and quality as an argument.
+"""
+parser=argparse.ArgumentParser(description='\33[32mImage Compressor @reharish\33[0m')
 parser.add_argument('-f','--filename',type=str,required=True,help="Specify filename.")
 parser.add_argument('-q','--quality',type=int, default=10, nargs='?',help="Specify quality in scale 100 (default = 10)")
 
 args = parser.parse_args()
 
+"""
+Splitting image name from path if present 
+Using OS module 
+"""
 def img_path_rm(img_name):
     img_name = os.path.basename(img_name)
     return img_name
 
+"""
+Converting into less quality RGB image
+Takes name and qulaity as an args
+"""
 def img_compress(img_name, img_quality):
     picture = Image.open(img_name)
     img_name = img_path_rm(img_name)
@@ -28,11 +39,13 @@ if __name__ == "__main__" :
     img_quality = args.quality
         
     try:
+        # Calling Compress function with image name and quality
         img_compress(img_name, img_quality)
+        # makes print the result with python color codes
         print("\33[5m\33[32m"+img_name+" ==> small_"+img_name+"\33[0m")
         exit(0)
     except FileNotFoundError as e:
-        print("No such File " + img_name)
+        print("\33[31mNo such File " + img_name+"\33[0m")
     except Exception as e:
         print("Something went wrong !! " + str(e))
         exit(1)
