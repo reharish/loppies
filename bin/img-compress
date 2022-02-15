@@ -12,7 +12,6 @@ args = parser.parse_args()
 
 def img_path_rm(img_name):
     img_name = os.path.basename(img_name)
-    print(img_name)
     return img_name
 
 def img_compress(img_name, img_quality):
@@ -21,8 +20,7 @@ def img_compress(img_name, img_quality):
     # Changing ALL formats to RGBA
     rgb_picture = picture.convert('RGB')
     rgb_picture.save("small_"+img_name,"JPEG",
-                 optimize=True, quality=img_quality)
-
+                        optimize=True, quality=img_quality)
 
 if __name__ == "__main__" :
 
@@ -31,7 +29,10 @@ if __name__ == "__main__" :
         
     try:
         img_compress(img_name, img_quality)
+        print(img_name+" ==> small_"+img_name)
         exit(0)
+    except FileNotFoundError as e:
+        print("No such File " + img_name)
     except Exception as e:
-        print("Something went wrong !! " + e)
+        print("Something went wrong !! " + str(e))
         exit(1)
