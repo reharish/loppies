@@ -27,4 +27,10 @@ The script will display all hosts inside the network with ip address like arp ta
 #### HTML-open
 It will open html index file on the web browser if it presents.
 	* need to specify PATH or file as an argument.
-	* firefox and chrome is supported for opening in private. 
+	* firefox and chrome is supported for opening in private.  
+
+#### Img-Compress
+A python script, written for compressing image files into smaller size in scale of percentage.
+	* usage
+	* - -f to specify filename.
+	* - -q for quality (default = 10). i,e. 10% of original image. 
