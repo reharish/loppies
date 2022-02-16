@@ -1,12 +1,13 @@
 # Loppies
 
-## Handy Snippets for BASH env
+## My Handy snippets on BASH env
 
 - [backit](#Backit)  
 - [clean](#clean)
 - [rm-docker](#rm-docker)
 - [net-hosts](#net-hosts)
 - [html-open](#html-open)
+- [img-compress](#Img-Compress)
 
 #### Backit  
 A snippet to make `.bak` of everyfile parsed into it. If the file exists.   
