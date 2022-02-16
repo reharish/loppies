@@ -1,6 +1,23 @@
 #!/bin/bash
-#sync; echo 1 > /proc/sys/vm/drop_caches
-#sync; echo 2 > /proc/sys/vm/drop_caches
-#sync; echo 3 > /proc/sys/vm/drop_caches 
 
-echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'
+# commits all data in the kernel filesystem
+# to non-volatile storage buffers
+Sync_all(){
+	sync; echo 1 > /proc/sys/vm/drop_caches
+	sync; echo 2 > /proc/sys/vm/drop_caches
+	sync; echo 3 > /proc/sys/vm/drop_caches 
+}
+
+
+if sudo -l  2&>/dev/null ;
+then
+	if Sync_all;
+	then
+		swapoff -a\
+			&& swapon -a \
+			&& printf '\n%s\n' 'Ram-cache and Swap Cleared'
+	fi
+else
+	echo "Run as Root"
+fi
+
