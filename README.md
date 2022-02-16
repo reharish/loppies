@@ -30,7 +30,7 @@ It will open html index file on the web browser if it presents.
 	* firefox and chrome is supported for opening in private.  
 
 #### Img-Compress
-A python script, written for compressing image files into smaller size in scale of percentage.
-	* usage
-	* - -f to specify filename.
-	* - -q for quality (default = 10). i,e. 10% of original image. 
+A python script, written for compressing image files into smaller size in scale of percentage.  
+* usage
+  * -f to specify filename.   
+  * -q for quality (default = 10). i,e. 10% of original image. 
