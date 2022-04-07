@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Change below
-MyUser=""
-MyEmail=""
-WorkUser=""
-WorkEmail=""
+MyUser="reharish"
+MyEmail="XXXXreharish@users.noreply.github.com"
+WorkUser="reharish"
+WorkEmail="reharish@XXXX.com"
 
-if [ "$#" == "" ]
+if [ "$#" == "0" ]
 then
 	echo -e "\e[032m1.Personal Repo \n2.Work Repo \e[031m"
 	read -p $'Enter [1/2]: \e[0m' REPO
