@@ -1,5 +1,20 @@
 # Loppies
 
+## Installation
+
+* Clone this project
+```sh
+git clone https://github.com/reharish/loppies.git
+cd loppies
+echo $PWD
+```
+* Copy the loppies path
+* Add into `~/.bashrc` like below.
+
+```sh
+export PATH=$PATH:/path/to/loppies/bin
+```
+
 ## My Handy snippets on BASH env
 
 - [backit](#Backit)  
@@ -8,6 +23,7 @@
 - [net-hosts](#net-hosts)
 - [html-open](#html-open)
 - [img-compress](#Img-Compress)
+
 
 #### Backit  
 A snippet to make `.bak` of everyfile parsed into it. If the file exists.   
